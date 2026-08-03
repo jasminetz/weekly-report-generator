@@ -1,0 +1,6 @@
+# .claudeignore
+node_modules/ #依赖包目录
+.next/ # Next.js构建产物
+dist/ # 编译输出
+*.log
+.env

@@ -1,0 +1,55 @@
+{
+  "eval_id": 1,
+  "eval_name": "chinese-weekly-report",
+  "prompt": "帮我生成这周的周报",
+  "assertions": [
+    {
+      "name": "report-file-exists",
+      "description": "报告文件存在于 reports/ 目录下",
+      "check": "file_exists",
+      "expected": "reports/weekly-report-2026-08-09.md"
+    },
+    {
+      "name": "correct-filename-format",
+      "description": "文件名符合 weekly-report-YYYY-MM-DD.md 格式",
+      "check": "pattern_match",
+      "expected": "weekly-report-\\d{4}-\\d{2}-\\d{2}\\.md"
+    },
+    {
+      "name": "has-overview-section",
+      "description": "报告包含「概览」或「Overview」章节",
+      "check": "content_contains",
+      "expected": "概览"
+    },
+    {
+      "name": "has-commit-section",
+      "description": "报告包含「提交记录」或「Commits」章节",
+      "check": "content_contains",
+      "expected": "提交"
+    },
+    {
+      "name": "has-todo-section",
+      "description": "报告包含 TODO 变更相关章节",
+      "check": "content_contains",
+      "expected": "TODO"
+    },
+    {
+      "name": "references-branch-name",
+      "description": "报告中包含当前分支名 master",
+      "check": "content_contains",
+      "expected": "master"
+    },
+    {
+      "name": "contains-date-range",
+      "description": "报告包含本周日期范围 2026-08-03 ~ 2026-08-09",
+      "check": "content_contains",
+      "expected": "2026-08-03"
+    },
+    {
+      "name": "valid-markdown-structure",
+      "description": "文件是合法的 Markdown，包含 # 标题",
+      "check": "content_contains",
+      "expected": "# "
+    }
+  ]
+}

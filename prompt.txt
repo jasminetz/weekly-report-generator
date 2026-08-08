@@ -1,0 +1,4 @@
+用skill-creator帮我创建一个名为weekly-report-generator的技能。
+功能：每周自动扫描本周的Git提交记录和TODO变更。
+生成一份结构化的周报Markdown文件。
+需要的工具：Read，Glob，Bash（用于git log）。

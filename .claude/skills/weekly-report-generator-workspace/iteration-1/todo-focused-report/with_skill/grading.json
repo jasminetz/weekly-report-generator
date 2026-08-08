@@ -1,0 +1,47 @@
+{
+  "pass_count": 8,
+  "total": 8,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "report-file-exists: PASS — 报告文件存在于 reports/ 目录下",
+      "passed": true,
+      "evidence": "File exists: /Users/tongzou/dev/AICoding/claude_deepseek/reports/weekly-report-2026-08-09.md"
+    },
+    {
+      "text": "correct-filename-format: PASS — 文件名符合 weekly-report-YYYY-MM-DD.md 格式",
+      "passed": true,
+      "evidence": "Filename 'weekly-report-2026-08-09.md' matches pattern 'weekly-report-\\d{4}-\\d{2}-\\d{2}\\.md'"
+    },
+    {
+      "text": "has-overview-section: PASS — 报告包含概览章节",
+      "passed": true,
+      "evidence": "'概览' found in report"
+    },
+    {
+      "text": "has-commit-statistics: PASS — 报告包含提交统计数据",
+      "passed": true,
+      "evidence": "'提交' found in report"
+    },
+    {
+      "text": "has-todo-detail: PASS — 报告包含 TODO/FIXME 详细信息（不仅是章节标题）",
+      "passed": true,
+      "evidence": "'TODO' found in report"
+    },
+    {
+      "text": "mentions-fixme-or-hack: PASS — 报告提及 FIXME 或 HACK 标记的扫描",
+      "passed": true,
+      "evidence": "Found: ['FIXME', 'HACK', '新增', '已解决']; Missing: []"
+    },
+    {
+      "text": "contains-date-range: PASS — 报告包含本周日期范围",
+      "passed": true,
+      "evidence": "'2026-08-03' found in report"
+    },
+    {
+      "text": "valid-markdown-structure: PASS — 文件是合法的 Markdown",
+      "passed": true,
+      "evidence": "'# ' found in report"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "skill_name": "weekly-report-generator",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "帮我生成这周的周报",
+      "expected_output": "在 reports/ 目录下生成一份中文周报 Markdown 文件，包含本周 Git 提交记录和 TODO 变更信息",
+      "files": [],
+      "assertions": [
+        {"name": "report-file-exists", "description": "报告文件存在于 reports/ 目录下"},
+        {"name": "correct-filename-format", "description": "文件名符合 weekly-report-YYYY-MM-DD.md 格式"},
+        {"name": "has-overview-section", "description": "报告包含「概览」章节"},
+        {"name": "has-commit-section", "description": "报告包含「提交记录」章节"},
+        {"name": "has-todo-section", "description": "报告包含 TODO 变更章节"},
+        {"name": "references-branch-name", "description": "报告中包含当前分支名 master"},
+        {"name": "contains-date-range", "description": "报告包含本周日期范围"},
+        {"name": "valid-markdown-structure", "description": "文件是合法的 Markdown"}
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Generate a weekly report for this week's commits and TODO changes, save it as a markdown file",
+      "expected_output": "在 reports/ 目录下生成一份英文或中文周报 Markdown 文件，包含提交记录和 TODO 变更",
+      "files": [],
+      "assertions": [
+        {"name": "report-file-exists", "description": "报告文件存在于 reports/ 目录下"},
+        {"name": "correct-filename-format", "description": "文件名符合 weekly-report-YYYY-MM-DD.md 格式"},
+        {"name": "has-overview-or-summary", "description": "报告包含概览/统计类章节"},
+        {"name": "has-commit-info", "description": "报告包含提交相关信息"},
+        {"name": "has-todo-section", "description": "报告包含 TODO 变更章节"},
+        {"name": "references-branch-name", "description": "报告中包含当前分支名"},
+        {"name": "contains-date-range", "description": "报告包含本周日期范围"},
+        {"name": "valid-markdown-structure", "description": "文件是合法的 Markdown"}
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "生成本周工作周报，重点列出代码里新增和删除的 TODO/FIXME，以及 git 提交统计",
+      "expected_output": "生成周报，包含 TODO/FIXME 变更详情和提交统计，文件在 reports/ 目录下",
+      "files": [],
+      "assertions": [
+        {"name": "report-file-exists", "description": "报告文件存在于 reports/ 目录下"},
+        {"name": "correct-filename-format", "description": "文件名符合 weekly-report-YYYY-MM-DD.md 格式"},
+        {"name": "has-overview-section", "description": "报告包含概览章节"},
+        {"name": "has-commit-statistics", "description": "报告包含提交统计数据"},
+        {"name": "has-todo-detail", "description": "报告包含 TODO/FIXME 详细信息"},
+        {"name": "mentions-fixme-or-hack", "description": "报告提及 FIXME 或 HACK 标记"},
+        {"name": "contains-date-range", "description": "报告包含本周日期范围"},
+        {"name": "valid-markdown-structure", "description": "文件是合法的 Markdown"}
+      ]
+    }
+  ]
+}

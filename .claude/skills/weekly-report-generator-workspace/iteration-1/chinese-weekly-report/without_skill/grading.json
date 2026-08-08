@@ -1,0 +1,47 @@
+{
+  "pass_count": 7,
+  "total": 8,
+  "pass_rate": 0.875,
+  "expectations": [
+    {
+      "text": "report-file-exists: PASS — 报告文件存在于 reports/ 目录下",
+      "passed": true,
+      "evidence": "File exists: /Users/tongzou/dev/AICoding/claude_deepseek/reports/weekly-report-2026-08-09.md"
+    },
+    {
+      "text": "correct-filename-format: FAIL — 文件名符合 weekly-report-YYYY-MM-DD.md 格式",
+      "passed": false,
+      "evidence": "Filename 'weekly-report-2026-08-03-to-2026-08-09.md' does not match pattern 'weekly-report-\\d{4}-\\d{2}-\\d{2}\\.md'"
+    },
+    {
+      "text": "has-overview-section: PASS — 报告包含「概览」或「Overview」章节",
+      "passed": true,
+      "evidence": "'概览' found in report"
+    },
+    {
+      "text": "has-commit-section: PASS — 报告包含「提交记录」或「Commits」章节",
+      "passed": true,
+      "evidence": "'提交' found in report"
+    },
+    {
+      "text": "has-todo-section: PASS — 报告包含 TODO 变更相关章节",
+      "passed": true,
+      "evidence": "'TODO' found in report"
+    },
+    {
+      "text": "references-branch-name: PASS — 报告中包含当前分支名 master",
+      "passed": true,
+      "evidence": "'master' found in report"
+    },
+    {
+      "text": "contains-date-range: PASS — 报告包含本周日期范围 2026-08-03 ~ 2026-08-09",
+      "passed": true,
+      "evidence": "'2026-08-03' found in report"
+    },
+    {
+      "text": "valid-markdown-structure: PASS — 文件是合法的 Markdown，包含 # 标题",
+      "passed": true,
+      "evidence": "'# ' found in report"
+    }
+  ]
+}

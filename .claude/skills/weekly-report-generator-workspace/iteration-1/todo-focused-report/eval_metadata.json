@@ -1,0 +1,55 @@
+{
+  "eval_id": 3,
+  "eval_name": "todo-focused-report",
+  "prompt": "生成本周工作周报，重点列出代码里新增和删除的 TODO/FIXME，以及 git 提交统计",
+  "assertions": [
+    {
+      "name": "report-file-exists",
+      "description": "报告文件存在于 reports/ 目录下",
+      "check": "file_exists",
+      "expected": "reports/weekly-report-2026-08-09.md"
+    },
+    {
+      "name": "correct-filename-format",
+      "description": "文件名符合 weekly-report-YYYY-MM-DD.md 格式",
+      "check": "pattern_match",
+      "expected": "weekly-report-\\d{4}-\\d{2}-\\d{2}\\.md"
+    },
+    {
+      "name": "has-overview-section",
+      "description": "报告包含概览章节",
+      "check": "content_contains",
+      "expected": "概览"
+    },
+    {
+      "name": "has-commit-statistics",
+      "description": "报告包含提交统计数据",
+      "check": "content_contains",
+      "expected": "提交"
+    },
+    {
+      "name": "has-todo-detail",
+      "description": "报告包含 TODO/FIXME 详细信息（不仅是章节标题）",
+      "check": "content_contains",
+      "expected": "TODO"
+    },
+    {
+      "name": "mentions-fixme-or-hack",
+      "description": "报告提及 FIXME 或 HACK 标记的扫描",
+      "check": "content_contains_any",
+      "expected": ["FIXME", "HACK", "新增", "已解决"]
+    },
+    {
+      "name": "contains-date-range",
+      "description": "报告包含本周日期范围",
+      "check": "content_contains",
+      "expected": "2026-08-03"
+    },
+    {
+      "name": "valid-markdown-structure",
+      "description": "文件是合法的 Markdown",
+      "check": "content_contains",
+      "expected": "# "
+    }
+  ]
+}
